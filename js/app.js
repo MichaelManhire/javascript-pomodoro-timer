@@ -30,7 +30,33 @@ function countdown() {
     
     timer.textContent = currentMins + ":" + currentSecs;
     
+    if (secs !== -1) {
+        // Continue the countdown
+        setTimeout(countdown, 1000);
+    } else {
+        // When countdown reaches 0...
+        playSound();
+        
+        if (!comingOffBreak) {
+            // If user just finished a pomodoro...
+            countNumOfPomodoros();
+            
+            if (numOfPomodoros % 4 === 0) {
+                button.textContent = "Start Long Break";
+                resetForLongBreak();
+            } else {
+                button.textContent = "Start Short Break";
+                resetForShortBreak();
+            };
+        } else {
+            // If user just finished a break...
+            button.textContent = "Start Pomodoro";
+            resetCountdown();
+        };        
+    };
 }
+
+
 
 function countNumOfPomodoros() {
     // Add 1 to numOfPomodoros after each pomodoro is completed
