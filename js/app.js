@@ -56,7 +56,9 @@ function countdown() {
     };
 }
 
-
+function playSound() {
+    sound.play();
+};
 
 function countNumOfPomodoros() {
     // Add 1 to numOfPomodoros after each pomodoro is completed
