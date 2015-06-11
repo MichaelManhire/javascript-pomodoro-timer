@@ -10,6 +10,12 @@ var mins = 25,
     currentMins = 0,
     comingOffBreak = false;
 
+function countNumOfPomodoros() {
+    // Add 1 to numOfPomodoros after each pomodoro is completed
+    numOfPomodoros++;
+    return numOfPomodoros;
+}
+
 function resetCountdown() {
     // For new pomodoro
     mins = 25;
