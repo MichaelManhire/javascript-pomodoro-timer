@@ -10,6 +10,8 @@ var mins = 25,
     currentMins = 0,
     comingOffBreak = false;
 
+button.addEventListener("click", startCountdown);
+
 function startCountdown() {
     setTimeout(countdown, 1000);
 }
